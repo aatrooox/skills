@@ -72,6 +72,13 @@ bunx @zzclub/z-cli config --reset
     "overwrite": false,
     "outputDir": null,
     "verbose": false
+  },
+  "wx": {
+    "baseUrl": "https://zzao.club",
+    "pat": "",
+    "appId": "",
+    "appSecret": "",
+    "timeout": 30000
   }
 }
 ```
@@ -151,6 +158,13 @@ If user wants to manually edit config:
     overwrite: boolean,   // default: false
     outputDir: string | null,  // default: null
     verbose: boolean      // default: false
+  },
+  wx: {
+    baseUrl: string,      // default: "https://zzao.club"
+    pat: string,          // default: ""
+    appId: string,        // default: ""
+    appSecret: string,    // default: ""
+    timeout: number       // default: 30000
   }
 }
 ```

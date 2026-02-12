@@ -18,6 +18,11 @@ bunx @zzclub/z-cli set [options]
 | `-o` | `--overwrite` | boolean | Enable overwrite by default |
 | | `--no-overwrite` | boolean | Disable overwrite by default |
 | | `--output <dir>` | string | Set default output directory |
+| | `--wx-base-url <url>` | string | Set WeChat API base URL (config.wx.baseUrl) |
+| | `--wx-pat <token>` | string | Set `ZZCLUB_PAT` (config.wx.pat) |
+| | `--wx-app-id <id>` | string | Set `WX_APPID` (config.wx.appId) |
+| | `--wx-app-secret <secret>` | string | Set `WX_APPSECRET` (config.wx.appSecret) |
+| | `--wx-timeout <ms>` | number | Set WeChat request timeout in ms (config.wx.timeout) |
 
 ## Usage Examples
 
@@ -66,6 +71,13 @@ bunx @zzclub/z-cli set --output ""
 ```bash
 # Configure multiple settings
 bunx @zzclub/z-cli set -q 85 -r --output ./compressed
+
+# Configure wx defaults
+bunx @zzclub/z-cli set --wx-base-url https://zzao.club \
+  --wx-pat <token> \
+  --wx-app-id <id> \
+  --wx-app-secret <secret> \
+  --wx-timeout 30000
 ```
 
 ## Agent Workflow

@@ -5,7 +5,7 @@ description: Image compression and optimization using @zzclub/z-cli. Use when wo
 
 # z-cli
 
-Provides access to `@zzclub/z-cli` commands for image processing and configuration management.
+Provides access to `@zzclub/z-cli` commands for image processing, WeChat draft workflows, and configuration management.
 
 ## Quick Start
 
@@ -55,14 +55,16 @@ bunx @zzclub/z-cli set -q 85
 ## Decision Tree
 
 ```
-User request about images?
-├─ Yes: Needs compression/optimization?
-│  ├─ Yes → Load references/tiny.md
-│  └─ No: About default settings?
-│     ├─ Yes: Viewing config? → Load references/config.md
-│     └─ No: Changing config? → Load references/set.md
-└─ No: Configuration/settings related?
-   └─ Yes → Load references/config.md or references/set.md
+User request about WeChat drafts/upload?
+├─ Yes → Load references/wx.md
+└─ No: User request about images?
+ ├─ Yes: Needs compression/optimization?
+ │  ├─ Yes → Load references/tiny.md
+ │  └─ No: About default settings?
+ │     ├─ Yes: Viewing config? → Load references/config.md
+ │     └─ No: Changing config? → Load references/set.md
+ └─ No: Configuration/settings related?
+    └─ Yes → Load references/config.md or references/set.md
 ```
 
 ## General Guidelines
@@ -85,3 +87,12 @@ For detailed examples and workflows, see [references/common-patterns.md](referen
 ---
 
 **Adding new commands**: Create a new `references/<command>.md` file and add routing logic above.
+### WeChat Draft Workflow (`wx` command)
+**When to use**: User wants to create WeChat Official Account drafts, upload images, or fetch access_token via zzao.club.
+
+**Read**: [references/wx.md](./references/wx.md)
+
+**Quick example**:
+```bash
+bunx @zzclub/z-cli wx draft -t "Title" --html-file ./content.html --photos ./cover.jpg
+```
