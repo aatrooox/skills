@@ -39,6 +39,13 @@ bunx @zzclub/z-cli config
     "overwrite": false,
     "outputDir": null,
     "verbose": false
+  },
+  "wx": {
+    "baseUrl": "https://zzao.club",
+    "pat": "",
+    "appId": "",
+    "appSecret": "",
+    "timeout": 30000
   }
 }
 ```

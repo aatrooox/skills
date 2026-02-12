@@ -1,6 +1,6 @@
 ---
 name: z-cli
-description: Image compression and optimization using @zzclub/z-cli. Use when working with images that need compression, size reduction, or batch optimization. Triggers include "compress image", "reduce image size", "optimize images", "batch process images", or any task involving image file size reduction for web, email, or storage. Also handles CLI configuration management.
+description: Image compression and optimization, WeChat draft workflow, and CLI configuration management using @zzclub/z-cli. Use when working with images that need compression/size reduction, or when creating WeChat Official Account drafts via zzao.club.
 ---
 
 # z-cli
@@ -52,6 +52,16 @@ bunx @zzclub/z-cli config
 bunx @zzclub/z-cli set -q 85
 ```
 
+### WeChat Draft Workflow (`wx` command)
+**When to use**: User wants to create WeChat Official Account drafts, upload images, or fetch access_token via zzao.club.
+
+**Read**: [references/wx.md](./references/wx.md)
+
+**Quick example**:
+```bash
+bunx @zzclub/z-cli wx draft -t "Title" --html-file ./content.html --photos ./cover.jpg
+```
+
 ## Decision Tree
 
 ```
@@ -87,12 +97,3 @@ For detailed examples and workflows, see [references/common-patterns.md](referen
 ---
 
 **Adding new commands**: Create a new `references/<command>.md` file and add routing logic above.
-### WeChat Draft Workflow (`wx` command)
-**When to use**: User wants to create WeChat Official Account drafts, upload images, or fetch access_token via zzao.club.
-
-**Read**: [references/wx.md](./references/wx.md)
-
-**Quick example**:
-```bash
-bunx @zzclub/z-cli wx draft -t "Title" --html-file ./content.html --photos ./cover.jpg
-```
